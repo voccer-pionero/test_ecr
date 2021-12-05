@@ -14,8 +14,8 @@ Resources:
     Properties:
       PackageType: Image
       FunctionName: ECRTestFunction
-      ImageUri: ecrtestfunction:lastest
+      ImageUri: ecrtestfunction:latest
     Metadata:
       Dockerfile: Dockerfile
       DockerContext: ecr_test/
-      DockerTag: lastest
+      DockerTag: latest

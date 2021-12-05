@@ -26,4 +26,4 @@ Resources:
     Metadata:
       Dockerfile: Dockerfile
       DockerContext: ecr_test/
-      DockerTag: lastest
+      DockerTag: latest
