@@ -15,7 +15,7 @@ phases:
     commands:
       - echo "[+] Running pre-build tasks"
       - CLOUD_URL="465316005105.dkr.ecr.ap-northeast-1.amazonaws.com/testecr1c3b47fa/ecrtestfunctionbd62314brepo"
-      - LATEST_TAG="ecrtestfunction-d232cddc4649-latest"
+      - LATEST_TAG="ecrtestfunction-74e71697daaa-latest" 
       - IMAGE_LATEST="${CLOUD_URL}:${LATEST_TAG}"
       - IMAGE_TAG="ecrtestfunction-d232cddc4649-1" #CODEBUILD_SOURCE_VERSION
       - MY_FUNC="ECRTestFunction"
