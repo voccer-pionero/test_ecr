@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+
+  Sam for sso
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  # MyRepository:
+  #   Type: AWS::ECR::Repository
+  #   Properties:
+  #     RepositoryName: 'test-repository'
+  #     ImageScanningConfiguration:
+  #       ScanOnPush: 'true'
+
+  ECRTestFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      FunctionName: ECRTestFunction
+      ImageUri: ecr-test-repository:latest
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ecr_test/
+      DockerTag: lastest

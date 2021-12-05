@@ -10,7 +10,7 @@ phases:
 #       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
       # - pipenv check (if pipenv is installed and a Pipfile is in place)
       # - Alternatively: https://www.owasp.org/index.php/OWASP_Dependency_Check
-      - systemctl start docker
+      # - systemctl start docker
   pre_build:
     commands:
       - echo "[+] Running pre-build tasks"
