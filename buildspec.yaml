@@ -20,7 +20,7 @@ phases:
       - IMAGE_URI=$(aws lambda get-function --function-name $MY_FUNC | jq -r '.Code.ImageUri')
   build:
     commands:
-      - echo "[+] Installing dependencies....""
+      - echo "[+] Installing dependencies...."
       - docker build --pull -t $IMAGE_LATEST ./ecr_test
       - echo "Tagging image..."
       - docker tag $IMAGE_LATEST $IMAGE_TAG
