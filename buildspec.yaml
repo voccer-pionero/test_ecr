@@ -27,13 +27,13 @@ phases:
       - docker info
       - docker build --pull -t $IMAGE_LASTEST ./ecr_test
       - echo "Tagging image..."
-      - docker tag $IMAGE_LATEST $IMAGE_TAG
+      - docker tag $IMAGE_LATEST $IMAGE_TAG   
+  post_build:
+    commands:
       - echo "Pushing image..."
       - docker push $IMAGE_LASTEST
       - docker push $IMAGE_TAG
       - aws lambda update-function-code --function-name $MY_FUNC --image-uri $IMAGE_URI >> /dev/null
-  post_build:
-    commands:
       - echo "SAM packaging completed on `date`"
 # artifacts:
 #   files:
