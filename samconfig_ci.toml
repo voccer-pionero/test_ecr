@@ -7,5 +7,5 @@ s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-15wy90y4nj0it"
 s3_prefix = "mbcsso-dev-ci"
 region = "ap-northeast-1"
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "SystemName=\"mbcsso\" Env=\"dev\" SourceCodeProvider=\"GitHub\" GitHubOAuthToken=\"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\" GitHubOwner=\"voccer\" GitHubRepo=\"test_ecr\" GitHubBranch=\"main\" BuildSpecFilePath=\"buildspec.yaml\""
+parameter_overrides = "SystemName=\"mbcsso\" Env=\"dev\" SourceCodeProvider=\"GitHub\" GitHubOAuthToken=\"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\" GitHubOwner=\"voccer\" GitHubRepo=\"test_ecr\" GitHubBranch=\"main\" BuildSpecFilePath=\"buildspec.yaml\""
 image_repositories = []

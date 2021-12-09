@@ -36,7 +36,7 @@ Parameters:
   GitHubOAuthToken:
     Description: OAuth token used by AWS CodePipeline to connect to GitHub
     Type: String
-    Default: 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
+    Default: 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
   GitHubOwner:
     Description: GitHub username owning the repo
     Type: String
