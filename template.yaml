@@ -27,3 +27,4 @@ Resources:
       Dockerfile: Dockerfile
       DockerContext: ecr_test/
       DockerTag: latest
+  

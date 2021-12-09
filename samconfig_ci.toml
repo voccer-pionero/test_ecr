@@ -2,10 +2,10 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "test-ecr"
+stack_name = "mbcsso-dev-ci"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-15wy90y4nj0it"
-s3_prefix = "test-ecr"
+s3_prefix = "mbcsso-dev-ci"
 region = "ap-northeast-1"
 capabilities = "CAPABILITY_IAM"
-image_repositories = ["ECRTestFunction=465316005105.dkr.ecr.ap-northeast-1.amazonaws.com/testecr1c3b47fa/ecrtestfunctionbd62314brepo"]
 parameter_overrides = "SystemName=\"mbcsso\" Env=\"dev\" SourceCodeProvider=\"GitHub\" GitHubOAuthToken=\"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\" GitHubOwner=\"voccer\" GitHubRepo=\"test_ecr\" GitHubBranch=\"main\" BuildSpecFilePath=\"buildspec.yaml\""
+image_repositories = []
