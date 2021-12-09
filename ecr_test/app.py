@@ -7,7 +7,7 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "body": json.dumps(
             {
-                "message": "go to sleep",
+                "message": "go to sleep1",
             }
         ),
     }

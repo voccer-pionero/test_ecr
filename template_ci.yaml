@@ -88,15 +88,14 @@ Resources:
             - Name: GitHubSource
               ActionTypeId:
                 Category: Source
-                Owner: ThirdParty
-                Provider: GitHub
+                Owner: AWS
+                Provider: CodeStarSourceConnection
                 Version: '1'
               Configuration:
-                Owner: !Ref GitHubOwner
-                OAuthToken: !Ref GitHubOAuthToken
-                Repo: !Ref GitHubRepo
-                Branch: !Ref GitHubBranch
-                PollForSourceChanges: false
+                ConnectionArn: !Ref GitHubConnection
+                FullRepositoryId: !Sub '${GitHubOwner}/${GitHubRepo}'
+                BranchName: !Ref GitHubBranch
+                OutputArtifactFormat: "CODE_ZIP"
               OutputArtifacts:
                 - Name: SourceArtifact
 
@@ -163,20 +162,12 @@ Resources:
                   - 'codestar-connections:UseConnection'
                 Resource:
                   - '*'
-
-  GitHubWebhook:
-    Type: 'AWS::CodePipeline::Webhook'
-    Properties:
-      AuthenticationConfiguration:
-        SecretToken: !Ref GitHubOAuthToken
-      Filters:
-        - JsonPath: '$.ref'
-          MatchEquals: refs/heads/{Branch}
-      Authentication: GITHUB_HMAC
-      TargetPipeline: !Ref Pipeline
-      TargetAction: GitHubSource
-      TargetPipelineVersion: !GetAtt Pipeline.Version
-      RegisterWithThirdParty: true
+  
+  GitHubConnection:
+      Type: 'AWS::CodeStarConnections::Connection'
+      Properties:
+        ConnectionName: !Sub '${SystemName}_${Env}_github_connection'
+        ProviderType: GitHub
 
   BuildProject:
     Type: AWS::CodeBuild::Project
